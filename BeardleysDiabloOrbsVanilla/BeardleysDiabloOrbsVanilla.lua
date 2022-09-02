@@ -76,11 +76,25 @@ local function changeActionBar()
 end
 
 local function updateHealthOrb()
+	local healthColor = {
+		[1] = {15, 1.0, 0, 0},
+		[2] = {35, 1.0, 0.27, 0},
+		[3] = {55, 1.0, 0.65, 0},
+		[4] = {75, 1.0, 1.0, 0},
+		[5] = {90, 0.5, 0.8, 0},
+		[6] = {100, 0, 1.0, 0}
+	}
 	local healthPercent = (UnitHealth("player")/UnitHealthMax("player"))
+	local hp = healthPercent*100
 	BDOMod_HealthPercentage:SetText(floor(healthPercent * 100))
 	BDOMod_HealthText:SetText(UnitHealth("player").." / ".. UnitHealthMax("player"))
 	BDOMod_RedOrb:SetHeight(healthPercent * 185)
 	BDOMod_RedOrb:SetTexCoord(0, 1, 1-healthPercent, 1)
+	for k, v in healthColor do
+		if hp <= healthColor[k][1] then
+			BDOMod_RedOrb:SetVertexColor(v[2],v[3],v[4]) break
+		end
+	end
 end
 
 local function updateManaOrb()
