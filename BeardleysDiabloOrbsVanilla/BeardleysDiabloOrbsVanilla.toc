@@ -7,4 +7,4 @@
 ## SavedVariablesPerCharacter: BDVanilla_SV
 BeardleysDiabloOrbsVanilla.xml
 BeardleysDiabloOrbsVanilla.lua
-
+FrameSet.lua

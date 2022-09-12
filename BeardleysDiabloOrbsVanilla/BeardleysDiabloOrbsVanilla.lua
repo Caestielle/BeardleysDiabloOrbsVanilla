@@ -5,7 +5,7 @@
 ----------------------------
 --        Settings        --
 ----------------------------
-scaleFactor = 1.35 -- With this value you can scale the whole UI. Menu with settings is comming soon...
+scaleFactor = 1.25 -- With this value you can scale the whole UI. Menu with settings is comming soon...
 ----------------------------
 ----------------------------
 
@@ -25,6 +25,26 @@ function BDOMod_OnLoad()
 	this:RegisterEvent("ACTIONBAR_SHOWGRID")
 	this:RegisterEvent("LOOT_CLOSED")
 	this:RegisterEvent("PET_BAR_UPDATE")
+	this:RegisterForClicks("LeftButtonUp","RightButtonDown")
+end
+
+function PlayerStuff(button)
+	if ( SpellIsTargeting() and button == "RightButton" ) then
+		SpellStopTargeting();
+		return;
+	end
+	if ( button == "LeftButton" ) then
+		if ( SpellIsTargeting() ) then
+			SpellTargetUnit("player");
+		elseif ( CursorHasItem() ) then
+			AutoEquipCursorItem();
+		else
+			TargetUnit("player");
+		end
+	else
+		ToggleDropDownMenu(1, nil, PlayerFrameDropDown, "BDOMod_HealthOrb", 106, 127);
+		return;
+	end
 end
 
 local function addArtworkFrame(frameName,parentFrame,file,FrameStrata,offsetX,offsetY,height,width)
@@ -41,8 +61,8 @@ end
 
 local function createArtwork()
 	actionbarBackground = addArtworkFrame(nil,UIParent,images.."bar3.tga","LOW",1,-4,127,491)
-	leftArtwork = addArtworkFrame(nil,UIParent,images.."leftArtwork.tga","HIGH",-325,0,200,200)
-	rightArtwork = addArtworkFrame(nil,UIParent,images.."rightArtwork.tga","HIGH",325,0,200,200)
+	leftArtwork = addArtworkFrame(nil,UIParent,images.."leftArtwork.tga","HIGH",-390,0,200,200)
+	rightArtwork = addArtworkFrame(nil,UIParent,images.."rightArtwork.tga","HIGH",390,0,200,200)
 end
 
 local function changeActionBar()
@@ -137,13 +157,13 @@ local function reconfigUI()
 	MainMenuBar:SetScale(.01)
 	MainMenuBar.ignoreFramePositionManager = true
 
-	BDOMod_HealthOrb:SetScale(scaleFactor*70/100)
-	BDOMod_ManaOrb:SetScale(scaleFactor*70/100)
+	BDOMod_HealthOrb:SetScale(scaleFactor*53/100)
+	BDOMod_ManaOrb:SetScale(scaleFactor*53/100)
 
 	actionbarBackground:SetScale(scaleFactor*90/100)
 
-	leftArtwork:SetScale(scaleFactor)
-	rightArtwork:SetScale(scaleFactor)	
+	leftArtwork:SetScale(scaleFactor*75/100)
+	rightArtwork:SetScale(scaleFactor*75/100)	
 
 	--Setup Action Bar
 	ActionButton1:ClearAllPoints()

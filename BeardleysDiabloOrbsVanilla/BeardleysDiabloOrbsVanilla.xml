@@ -10,11 +10,11 @@
         </Scripts>            
     </Frame>
      <!-- Health and Mana Orbs -->
-    <Frame name="BDOMod_HealthOrb" inherits="BDOMod_OrbFrame" virtual="false">     
+    <Button name="BDOMod_HealthOrb" inherits="BDOMod_OrbFrame" virtual="false">     
          <Anchors>
                 <Anchor point="BOTTOM">
                     <Offset>
-						<AbsDimension x="-331" y="-1"/>
+						<AbsDimension x="-406" y="-1"/>
 					</Offset>
                 </Anchor>
             </Anchors>
@@ -72,13 +72,16 @@
 	        <OnLoad>
                 BDOMod_OnLoad();
 	        </OnLoad>
+			<OnClick>
+				PlayerStuff(arg1);
+			</OnClick>
           </Scripts>  
-    </Frame>
+    </Button>
     <Frame name="BDOMod_ManaOrb"  inherits="BDOMod_OrbFrame" virtual="false">    
         <Anchors>
             <Anchor point="BOTTOM">
                 <Offset>
-					<AbsDimension x="337" y="-1"/>
+					<AbsDimension x="413" y="-1"/>
 			    </Offset>
             </Anchor>
         </Anchors>
