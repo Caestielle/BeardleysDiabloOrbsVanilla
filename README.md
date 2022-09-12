@@ -1,3 +1,16 @@
+NEW TO THIS FORK
+
+Added Fade effect to Health Orb
+Removed Player Frame and assigned the left/right click functionality to Health Orb
+Enhanced the Orbs to be "Prettier"
+Added a cracked orb effect to Health Orb to show when player is flagged for PvP
+Slightly adjusted the scaling so orbs are not crowding the UI
+
+![diablo](https://user-images.githubusercontent.com/109084116/189567059-5f46ebcf-ea18-4da7-a00e-4cd46a97b5ee.jpg)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Beardley's Diablo Orbs Vanilla
 
 Hey there,
