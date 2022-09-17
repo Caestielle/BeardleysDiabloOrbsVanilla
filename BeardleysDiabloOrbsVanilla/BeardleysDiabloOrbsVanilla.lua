@@ -122,7 +122,18 @@ local function updateManaOrb()
 	BDOMod_ManaPercentage:SetText(floor(manaPercent * 100))
 	BDOMod_ManaText:SetText(UnitMana("player").." / ".. UnitManaMax("player"))
 	BDOMod_BlueOrb:SetHeight(manaPercent * 185)
+	BDOMod_DruidLeft:SetHeight(manaPercent * 185)
 	BDOMod_BlueOrb:SetTexCoord(0, 1, 1-manaPercent, 1)
+	BDOMod_DruidLeft:SetTexCoord(0, 1, 1-manaPercent, 1)
+end
+
+local function updateDruidMana()
+	local lib = AceLibrary("DruidManaLib-1.0")
+	lib:MaxManaScript()
+	local DruidMana, DruidMaxMana = AceLibrary("DruidManaLib-1.0"):GetMana()
+	local DruidPercent = (DruidMana/DruidMaxMana)
+	BDOMod_DruidRight:SetHeight(DruidPercent * 185)
+	BDOMod_DruidRight:SetTexCoord(0, 1, 1-DruidPercent, 1)
 end
 
 local function handlePetActionBar()
@@ -564,7 +575,9 @@ local function setupOrbs()
 	--BDOMod_RedOrb:SetVertexColor(0.85,0.2,0.2)
 	--BDOMod_RedOrb:SetAlpha(0.95)
 	BDOMod_RedOrb:SetVertexColor(0.0,1.0,0.0)
-	BDOMod_RedOrb:SetTexCoord(0, 1, 0, 1)	
+	BDOMod_RedOrb:SetTexCoord(0, 1, 0, 1)
+	BDOMod_DruidRight:SetVertexColor(0.2,0.2,1.0)
+	BDOMod_DruidRight:SetTexCoord(0, 1, 0, 1)	
 	
 	BDOMod_HealthText:SetFont("Fonts\\FRIZQT__.TTF", 12)
 	BDOMod_HealthPercentage:SetFont("Fonts\\FRIZQT__.TTF", 25)
@@ -582,25 +595,33 @@ local function updatePowerType()
 	if (powerType == 0) then -- Mana
 		BDOMod_BlueOrb:SetVertexColor(0.2,0.2,1.0)
 		--BDOMod_BlueOrb:SetAlpha(0.95)
-		BDOMod_BlueOrb:SetTexCoord(0, 1, 0, 1) 
+		BDOMod_BlueOrb:SetTexCoord(0, 1, 0, 1)
+		BDOMod_DruidLeft:SetVertexColor(0.2,0.2,1.0)
+		BDOMod_DruidLeft:SetTexCoord(0, 1, 0, 1)
 		return
 	end
 	if (powerType == 1) then -- Rage
 		BDOMod_BlueOrb:SetVertexColor(1.0,0.15,0.15)
 		--BDOMod_BlueOrb:SetAlpha(0.95)
 		BDOMod_BlueOrb:SetTexCoord(0, 1, 0, 1)
+		BDOMod_DruidLeft:SetVertexColor(1.0,0.15,0.15)
+		BDOMod_DruidLeft:SetTexCoord(0, 1, 0, 1)
 		return
 	end
 	if (powerType == 3) then -- Energy
 		BDOMod_BlueOrb:SetVertexColor(1.0,1.0,0.0)
 		--BDOMod_BlueOrb:SetAlpha(0.95)
 		BDOMod_BlueOrb:SetTexCoord(0, 1, 0, 1)
+		BDOMod_DruidLeft:SetVertexColor(1.0,1.0,0.0)
+		BDOMod_DruidLeft:SetTexCoord(0, 1, 0, 1)
 		return
 	end
 	if (powerType == 6) then -- Runic_Power
 		BDOMod_BlueOrb:SetVertexColor(0.2,0.75,1.0)
 		--BDOMod_BlueOrb:SetAlpha(0.95)
 		BDOMod_BlueOrb:SetTexCoord(0, 1, 0, 1)
+		BDOMod_DruidLeft:SetVertexColor(0.2,0.75,1.0)
+		BDOMod_DruidLeft:SetTexCoord(0, 1, 0, 1)
 		return
 	end
 end
@@ -613,12 +634,30 @@ function BDOMod_OnEvent(event)
 		updatePowerType()
 		updateHealthOrb()
 		updateManaOrb()
+		if ( (UnitClass("player") == "Druid") and (UnitPowerType("player") ~= 0 ) ) then
+			BDOMod_BlueOrb:Hide()
+			BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+			updateDruidMana()
+		else
+			BDOMod_DruidLeft:Hide()
+			BDOMod_DruidRight:Hide()
+			BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+		end
 		return
 	end 
 	if (event=="UNIT_DISPLAYPOWER") then 
 		updatePowerType()
 		updateHealthOrb()
 		updateManaOrb()
+		if ( (UnitClass("player") == "Druid") and (UnitPowerType("player") ~= 0 ) ) then
+			BDOMod_BlueOrb:Hide()
+			BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+			updateDruidMana()
+		else
+			BDOMod_DruidLeft:Hide()
+			BDOMod_DruidRight:Hide()
+			BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+		end
 		return
 	end
 	if (event=="UNIT_HEALTH") then 
@@ -627,6 +666,15 @@ function BDOMod_OnEvent(event)
 	end
 	if (event=="UNIT_MANA" or event=="UNIT_RAGE" or event=="UNIT_ENERGY" or event=="UNIT_RUNIC_POWER") then    
 		updateManaOrb()
+		if ( (UnitClass("player") == "Druid") and (UnitPowerType("player") ~= 0 ) ) then
+			BDOMod_BlueOrb:Hide()
+			BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+			updateDruidMana()
+		else
+			BDOMod_DruidLeft:Hide()
+			BDOMod_DruidRight:Hide()
+			BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+		end
 		return
 	end
 	if (event=="UPDATE_BONUS_ACTIONBAR" or event=="ACTIONBAR_SLOT_CHANGED" or event=="ACTIONBAR_SHOWGRID" or event=="LOOT_CLOSED") then

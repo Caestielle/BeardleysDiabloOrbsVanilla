@@ -133,7 +133,37 @@
                         </Anchor>
                     </Anchors>    
                 </Texture>  
-            </Layer>       
+            </Layer>    
+            <Layer level="BACKGROUND">   
+                <Texture name ="BDOMod_DruidLeft" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_left">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="1.0" bottom="0.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="-17" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>  
+            </Layer>
+            <Layer level="BACKGROUND">   
+                <Texture name ="BDOMod_DruidRight" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_right">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="1.0" bottom="0.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="-17" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>  
+            </Layer>			
         </Layers>
     </Frame>
 </Ui>
