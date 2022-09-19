@@ -588,6 +588,8 @@ local function setupOrbs()
 	BDOMod_ManaPercentage:SetFont("Fonts\\FRIZQT__.TTF", 25)
 	BDOMod_ManaText:SetText(UnitMana("player").." / ".. UnitManaMax("player"))
 	BDOMod_ManaText:SetText(100)
+	BDOMod_DruidLeft:Hide()
+	BDOMod_DruidRight:Hide()
 end
 
 local function updatePowerType()
