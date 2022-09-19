@@ -634,17 +634,19 @@ function BDOMod_OnEvent(event)
 		updatePowerType()
 		updateHealthOrb()
 		updateManaOrb()
-		if ( (UnitClass("player") == "Druid") and (UnitPowerType("player") ~= 0 ) ) then
-			BDOMod_BlueOrb:Hide()
-			BDOMod_DruidLeft:Show()
-			BDOMod_DruidRight:Show()
-			BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+		if (UnitClass("player") == "Druid") then
 			updateDruidMana()
-		else
-			BDOMod_BlueOrb:Show()
-			BDOMod_DruidLeft:Hide()
-			BDOMod_DruidRight:Hide()
-			BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+			if (UnitPowerType("player") ~= 0 ) then
+				BDOMod_BlueOrb:Hide()
+				BDOMod_DruidLeft:Show()
+				BDOMod_DruidRight:Show()
+				BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+			else
+				BDOMod_BlueOrb:Show()
+				BDOMod_DruidLeft:Hide()
+				BDOMod_DruidRight:Hide()
+				BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+			end
 		end
 		return
 	end 
@@ -652,17 +654,19 @@ function BDOMod_OnEvent(event)
 		updatePowerType()
 		updateHealthOrb()
 		updateManaOrb()
-		if ( (UnitClass("player") == "Druid") and (UnitPowerType("player") ~= 0 ) ) then
-			BDOMod_BlueOrb:Hide()
-			BDOMod_DruidLeft:Show()
-			BDOMod_DruidRight:Show()
-			BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+		if (UnitClass("player") == "Druid") then
 			updateDruidMana()
-		else
-			BDOMod_BlueOrb:Show()
-			BDOMod_DruidLeft:Hide()
-			BDOMod_DruidRight:Hide()
-			BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+			if (UnitPowerType("player") ~= 0 ) then
+				BDOMod_BlueOrb:Hide()
+				BDOMod_DruidLeft:Show()
+				BDOMod_DruidRight:Show()
+				BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+			else
+				BDOMod_BlueOrb:Show()
+				BDOMod_DruidLeft:Hide()
+				BDOMod_DruidRight:Hide()
+				BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+			end
 		end
 		return
 	end
@@ -672,17 +676,19 @@ function BDOMod_OnEvent(event)
 	end
 	if (event=="UNIT_MANA" or event=="UNIT_RAGE" or event=="UNIT_ENERGY" or event=="UNIT_RUNIC_POWER") then    
 		updateManaOrb()
-		if ( (UnitClass("player") == "Druid") and (UnitPowerType("player") ~= 0 ) ) then
-			BDOMod_BlueOrb:Hide()
-			BDOMod_DruidLeft:Show()
-			BDOMod_DruidRight:Show()
-			BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+		if (UnitClass("player") == "Druid") then
 			updateDruidMana()
-		else
-			BDOMod_BlueOrb:Show()
-			BDOMod_DruidLeft:Hide()
-			BDOMod_DruidRight:Hide()
-			BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+			if (UnitPowerType("player") ~= 0 ) then
+				BDOMod_BlueOrb:Hide()
+				BDOMod_DruidLeft:Show()
+				BDOMod_DruidRight:Show()
+				BDOMod_BlueOrbGloss:SetTexture(images.."druid_gloss.tga")
+			else
+				BDOMod_BlueOrb:Show()
+				BDOMod_DruidLeft:Hide()
+				BDOMod_DruidRight:Hide()
+				BDOMod_BlueOrbGloss:SetTexture(images.."orb_gloss.tga")
+			end
 		end
 		return
 	end
