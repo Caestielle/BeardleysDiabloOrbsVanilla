@@ -51,6 +51,19 @@
                         </Anchor>
                     </Anchors>    
                 </Texture>
+				<Texture name ="BDOMod_RedOrbBorder" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_border">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="0.0" bottom="1.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="9" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>
 			</Layer>
             <Layer level="BACKGROUND">   
                 <Texture name ="BDOMod_RedOrb" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\blank_orb">
@@ -117,7 +130,20 @@
 					        </Offset>
                         </Anchor>
                     </Anchors>    
-                </Texture> 
+                </Texture>
+				<Texture name ="BDOMod_BlueOrbBorder" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_Border">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="1.0" right="0.0" top="0.0" bottom="1.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="-17" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>
             </Layer> 
             <Layer level="BACKGROUND">   
                 <Texture name ="BDOMod_BlueOrb" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\blank_orb">

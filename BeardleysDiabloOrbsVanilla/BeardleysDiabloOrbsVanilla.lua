@@ -25,7 +25,7 @@ function BDOMod_OnLoad()
 	this:RegisterEvent("ACTIONBAR_SHOWGRID")
 	this:RegisterEvent("LOOT_CLOSED")
 	this:RegisterEvent("PET_BAR_UPDATE")
-	this:RegisterForClicks("LeftButtonUp","RightButtonDown")
+	this:RegisterForClicks("LeftButtonDown", "RightButtonDown")
 end
 
 function PlayerStuff(button)
@@ -42,7 +42,7 @@ function PlayerStuff(button)
 			TargetUnit("player");
 		end
 	else
-		ToggleDropDownMenu(1, nil, PlayerFrameDropDown, "BDOMod_HealthOrb", 106, 127);
+		ToggleDropDownMenu(1, nil, PlayerFrameDropDown, "cursor", 3, -3);
 		return;
 	end
 end
@@ -129,8 +129,9 @@ end
 
 local function updateDruidMana()
 	local lib = AceLibrary("DruidManaLib-1.0")
+	local DruidMana = AceLibrary("DruidManaLib-1.0"):GetMana()
 	lib:MaxManaScript()
-	local DruidMana, DruidMaxMana = AceLibrary("DruidManaLib-1.0"):GetMana()
+	local _, DruidMaxMana = AceLibrary("DruidManaLib-1.0"):GetMana()
 	local DruidPercent = (DruidMana/DruidMaxMana)
 	BDOMod_DruidRight:SetHeight(DruidPercent * 185)
 	BDOMod_DruidRight:SetTexCoord(0, 1, 1-DruidPercent, 1)
@@ -629,11 +630,11 @@ local function updatePowerType()
 end
 
 function BDOMod_OnEvent(event)
-	if (event=="PLAYER_ENTERING_WORLD") then 
+	if (event=="PLAYER_ENTERING_WORLD") then
+		updatePowerType()
 		setupOrbs()
 		createArtwork()
 		reconfigUI()
-		updatePowerType()
 		updateHealthOrb()
 		updateManaOrb()
 		if (UnitClass("player") == "Druid") then
