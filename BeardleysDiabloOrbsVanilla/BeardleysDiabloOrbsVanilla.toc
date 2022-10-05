@@ -18,3 +18,4 @@ libs\DruidManaLib-1.0\DruidManaLib-1.0.lua
 BeardleysDiabloOrbsVanilla.xml
 BeardleysDiabloOrbsVanilla.lua
 FrameSet.lua
+Orbs.lua
