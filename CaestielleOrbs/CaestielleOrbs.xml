@@ -1,5 +1,5 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
-<Script file="BeardleysDiabloOrbsVanilla.lua"/>
+<Script file="CaestielleOrbs.lua"/>
      <!-- Generic orb frame for inheritance  -->
     <Frame name="BDOMod_OrbFrame" framestrata="MEDIUM" parent="UIParent" virtual="true">
         <Size x="256" y="256" />
@@ -38,7 +38,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-				<Texture name ="BDOMod_RedOrbGloss" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_gloss">
+				<Texture name ="BDOMod_RedOrbGloss" file="Interface\Addons\CaestielleOrbs\art\orb_gloss">
                     <Size>
                         <AbsDimension x="185" y="185"/>
                     </Size>
@@ -51,7 +51,7 @@
                         </Anchor>
                     </Anchors>    
                 </Texture>
-				<Texture name ="BDOMod_RedOrbBorder" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_border">
+				<Texture name ="BDOMod_RedOrbBorder" file="Interface\Addons\CaestielleOrbs\art\orb_border">
                     <Size>
                         <AbsDimension x="185" y="185"/>
                     </Size>
@@ -66,7 +66,7 @@
                 </Texture>
 			</Layer>
             <Layer level="BACKGROUND">   
-                <Texture name ="BDOMod_RedOrb" file="Interface\Addons\BeardleysDiabloOrbsVanilla\d3orbanimation\d3_orb_ani_frame0.tga">
+                <Texture name ="BDOMod_RedOrb" file="Interface\Addons\CaestielleOrbs\d3orbanimation\d3_orb_ani_frame0.tga">
                     <Size>
                         <AbsDimension x="185" y="185"/>
                     </Size>
@@ -118,7 +118,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-				<Texture name ="BDOMod_BlueOrbGloss" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_gloss">
+				<Texture name ="BDOMod_BlueOrbGloss" AlphaMode="BLEND" file="Interface\Addons\CaestielleOrbs\art\orb_gloss">
                     <Size>
                         <AbsDimension x="185" y="185"/>
                     </Size>
@@ -131,7 +131,7 @@
                         </Anchor>
                     </Anchors>    
                 </Texture>
-				<Texture name ="BDOMod_BlueOrbBorder" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_Border">
+				<Texture name ="BDOMod_BlueOrbBorder" AlphaMode="BLEND" file="Interface\Addons\CaestielleOrbs\art\orb_Border">
                     <Size>
                         <AbsDimension x="185" y="185"/>
                     </Size>
@@ -146,7 +146,7 @@
                 </Texture>
             </Layer> 
             <Layer level="BACKGROUND">   
-                <Texture name ="BDOMod_BlueOrb" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\d3orbanimation\d3_orb_ani_frame0.tga">
+                <Texture name ="BDOMod_BlueOrb" AlphaMode="BLEND" file="Interface\Addons\CaestielleOrbs\d3orbanimation\d3_orb_ani_frame0.tga">
                     <Size>
                         <AbsDimension x="185" y="185"/>
                     </Size>
@@ -161,30 +161,30 @@
                 </Texture>  
             </Layer>    
             <Layer level="BACKGROUND">   
-                <Texture name ="BDOMod_DruidLeft" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_left">
+                <Texture name ="BDOMod_DruidLeft" AlphaMode="BLEND" file="Interface\Addons\CaestielleOrbs\d3orbanimation\d3_orb_ani_frame0.tga">
                     <Size>
-                        <AbsDimension x="185" y="185"/>
+                        <AbsDimension x="95" y="185"/>
                     </Size>
                     <TexCoords left="0.0" right="1.0" top="1.0" bottom="0.0"/>
                     <Anchors>
                         <Anchor point="BOTTOM">
                             <Offset>
-						        <AbsDimension x="-17" y="-2"/>
+						        <AbsDimension x="-60" y="-2"/>
 					        </Offset>
                         </Anchor>
                     </Anchors>    
                 </Texture>  
             </Layer>
             <Layer level="BACKGROUND">   
-                <Texture name ="BDOMod_DruidRight" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_right">
+                <Texture name ="BDOMod_DruidRight" AlphaMode="BLEND" file="Interface\Addons\CaestielleOrbs\d3orbanimation\d3_orb_ani_frame0.tga">
                     <Size>
-                        <AbsDimension x="185" y="185"/>
+                        <AbsDimension x="90" y="185"/>
                     </Size>
                     <TexCoords left="0.0" right="1.0" top="1.0" bottom="0.0"/>
                     <Anchors>
                         <Anchor point="BOTTOM">
                             <Offset>
-						        <AbsDimension x="-17" y="-2"/>
+						        <AbsDimension x="28" y="-2"/>
 					        </Offset>
                         </Anchor>
                     </Anchors>    

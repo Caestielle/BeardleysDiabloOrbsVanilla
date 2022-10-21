@@ -1,5 +1,5 @@
 ## Interface: 11200
-## Title: BeardleysDiabloOrbsVanilla
+## Title: CaestielleOrbs
 ## Version: 0.1
 ## Notes: Beardley's Diablo Orbs backported to Vanilla WoW
 ## DefaultState: Enabled
@@ -15,7 +15,7 @@ libs\AceEvent-2.0\AceEvent-2.0.lua
 libs\AceLocale-2.2\AceLocale-2.2.lua
 libs\DruidManaLib-1.0\DruidManaLib-1.0.lua
 
-BeardleysDiabloOrbsVanilla.xml
-BeardleysDiabloOrbsVanilla.lua
+CaestielleOrbs.xml
+CaestielleOrbs.lua
 FrameSet.lua
 Orbs.lua
