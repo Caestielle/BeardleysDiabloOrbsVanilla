@@ -10,7 +10,7 @@ scaleFactor = 1.25 -- With this value you can scale the whole UI. Menu with sett
 ----------------------------
 
 
-local images = "Interface\\AddOns\\BeardleysDiabloOrbsVanilla\\art\\"
+local images = "Interface\\AddOns\\CaestielleOrbs\\art\\"
 function BDOMod_OnLoad()
 	this:RegisterEvent("UNIT_HEALTH")
 	this:RegisterEvent("UNIT_MAXHEALTH")
@@ -581,12 +581,12 @@ local function setupOrbs()
 	BDOMod_DruidRight:SetTexCoord(0, 1, 0, 1)	
 	
 	BDOMod_HealthText:SetFont("Fonts\\FRIZQT__.TTF", 12)
-	BDOMod_HealthPercentage:SetFont("Interface\\AddOns\\BeardleysDiabloOrbsVanilla\\fonts\\exocetBold.ttf", 30)
+	BDOMod_HealthPercentage:SetFont("Interface\\AddOns\\CaestielleOrbs\\fonts\\exocetBold.ttf", 30)
 	BDOMod_HealthText:SetText(UnitHealth("player").." / ".. UnitHealthMax("player"))
 	BDOMod_HealthPercentage:SetText(100)
 
 	BDOMod_ManaText:SetFont("Fonts\\FRIZQT__.TTF", 12)
-	BDOMod_ManaPercentage:SetFont("Interface\\AddOns\\BeardleysDiabloOrbsVanilla\\fonts\\exocetBold.ttf", 30)
+	BDOMod_ManaPercentage:SetFont("Interface\\AddOns\\CaestielleOrbs\\fonts\\exocetBold.ttf", 30)
 	BDOMod_ManaText:SetText(UnitMana("player").." / ".. UnitManaMax("player"))
 	BDOMod_ManaText:SetText(100)
 	BDOMod_DruidLeft:Hide()
