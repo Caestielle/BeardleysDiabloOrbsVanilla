@@ -1,0 +1,195 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+<Script file="BeardleysDiabloOrbsVanilla.lua"/>
+     <!-- Generic orb frame for inheritance  -->
+    <Frame name="BDOMod_OrbFrame" framestrata="MEDIUM" parent="UIParent" virtual="true">
+        <Size x="256" y="256" />
+			<Scripts>
+            <OnEvent>
+                BDOMod_OnEvent(event);
+            </OnEvent>
+        </Scripts>            
+    </Frame>
+     <!-- Health and Mana Orbs -->
+    <Button name="BDOMod_HealthOrb" inherits="BDOMod_OrbFrame" virtual="false">     
+         <Anchors>
+                <Anchor point="BOTTOM">
+                    <Offset>
+						<AbsDimension x="-406" y="-1"/>
+					</Offset>
+                </Anchor>
+            </Anchors>
+        <Layers>
+            <Layer level="OVERLAY">
+				<FontString name="BDOMod_HealthPercentage" inherits="ChatFontNormal" text="">
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="12" y="92" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="BDOMod_HealthText" inherits="ChatFontNormal" text="">
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="12" y="78" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+				<Texture name ="BDOMod_RedOrbGloss" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_gloss">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="0.0" bottom="1.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="9" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>
+				<Texture name ="BDOMod_RedOrbBorder" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_border">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="0.0" bottom="1.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="9" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>
+			</Layer>
+            <Layer level="BACKGROUND">   
+                <Texture name ="BDOMod_RedOrb" file="Interface\Addons\BeardleysDiabloOrbsVanilla\d3orbanimation\d3_orb_ani_frame0.tga">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="1.0" bottom="0.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="7" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>
+            </Layer>  
+        </Layers>
+        <Scripts>
+	        <OnLoad>
+                BDOMod_OnLoad();
+	        </OnLoad>
+			<OnClick>
+				PlayerStuff(arg1);
+			</OnClick>
+          </Scripts>  
+    </Button>
+    <Frame name="BDOMod_ManaOrb"  inherits="BDOMod_OrbFrame" virtual="false">    
+        <Anchors>
+            <Anchor point="BOTTOM">
+                <Offset>
+					<AbsDimension x="413" y="-1"/>
+			    </Offset>
+            </Anchor>
+        </Anchors>
+		<Layers>
+            <Layer level="OVERLAY">
+				<FontString name="BDOMod_ManaPercentage" inherits="ChatFontNormal" text="">
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="-15" y="92" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="BDOMod_ManaText" inherits="ChatFontNormal" text="">
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="-15" y="78" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+				<Texture name ="BDOMod_BlueOrbGloss" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_gloss">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="1.0" right="0.0" top="0.0" bottom="1.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="-17" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>
+				<Texture name ="BDOMod_BlueOrbBorder" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\art\orb_Border">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="1.0" right="0.0" top="0.0" bottom="1.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="-17" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>
+            </Layer> 
+            <Layer level="BACKGROUND">   
+                <Texture name ="BDOMod_BlueOrb" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\d3orbanimation\d3_orb_ani_frame0.tga">
+                    <Size>
+                        <AbsDimension x="185" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="1.0" bottom="0.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="-17" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>  
+            </Layer>    
+            <Layer level="BACKGROUND">   
+                <Texture name ="BDOMod_DruidLeft" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\d3orbanimation\d3_orb_ani_frame0.tga">
+                    <Size>
+                        <AbsDimension x="95" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="1.0" bottom="0.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="-60" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>  
+            </Layer>
+            <Layer level="BACKGROUND">   
+                <Texture name ="BDOMod_DruidRight" AlphaMode="BLEND" file="Interface\Addons\BeardleysDiabloOrbsVanilla\d3orbanimation\d3_orb_ani_frame0.tga">
+                    <Size>
+                        <AbsDimension x="90" y="185"/>
+                    </Size>
+                    <TexCoords left="0.0" right="1.0" top="1.0" bottom="0.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM">
+                            <Offset>
+						        <AbsDimension x="28" y="-2"/>
+					        </Offset>
+                        </Anchor>
+                    </Anchors>    
+                </Texture>  
+            </Layer>			
+        </Layers>
+    </Frame>
+</Ui>
