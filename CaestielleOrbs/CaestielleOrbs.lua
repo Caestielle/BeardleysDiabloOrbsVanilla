@@ -488,6 +488,7 @@ local function reconfigUI()
 	CharacterBag1Slot:ClearAllPoints()
 	CharacterBag2Slot:ClearAllPoints()
 	CharacterBag3Slot:ClearAllPoints()
+	KeyRingButton:ClearAllPoints()
 
 	CharacterMicroButton:SetScale(scaleFactor*42)
 	SpellbookMicroButton:SetScale(scaleFactor*42)
@@ -502,6 +503,7 @@ local function reconfigUI()
 	CharacterBag1Slot:SetScale(scaleFactor*38)
 	CharacterBag2Slot:SetScale(scaleFactor*38)
 	CharacterBag3Slot:SetScale(scaleFactor*38)
+	KeyRingButton:SetScale(scaleFactor*38)
 
 	CharacterMicroButton:SetPoint("BOTTOM", UIParent, "BOTTOM",-125,0)
 	SpellbookMicroButton:SetPoint("BOTTOM", UIParent, "BOTTOM",-100,0)
@@ -517,6 +519,7 @@ local function reconfigUI()
 	CharacterBag1Slot:SetPoint("BOTTOM", UIParent, "BOTTOM",320,1)
 	CharacterBag2Slot:SetPoint("BOTTOM", UIParent, "BOTTOM",280,1)
 	CharacterBag3Slot:SetPoint("BOTTOM", UIParent, "BOTTOM",240,1)
+	KeyRingButton:SetPoint("BOTTOM", UIParent, "BOTTOM", 200,1)
 
 	CharacterMicroButton.ignoreFramePositionManager = true
 	SpellbookMicroButton.ignoreFramePositionManager = true
@@ -528,6 +531,7 @@ local function reconfigUI()
 	CharacterBag1Slot.ignoreFramePositionManager = true
 	CharacterBag2Slot.ignoreFramePositionManager = true
 	CharacterBag3Slot.ignoreFramePositionManager = true
+	KeyRingButton.ignoreFramePositionManager = true
 
 	ShapeshiftButton1:ClearAllPoints()
 	ShapeshiftButton1:SetScale(scaleFactor*48)
